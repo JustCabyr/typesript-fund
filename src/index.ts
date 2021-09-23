@@ -11,7 +11,7 @@ function timeout(n: number) {
  * @param a first number
  * @param b second
  */
-export async function addNumbers(a: number, b: number) {
+export async function addNumbers(a: number, b: number): Promise<number> {
   await timeout(500)
   return a + b
 }
@@ -29,3 +29,41 @@ let startTime = new Date()
 let endTime: Date
 
 setTimeout(() => {endTime = new Date()}, RANDOM_WAIT_TIME)
+
+function printCar(car: {
+  make: string
+  model: string
+  year: number
+  chargeVoltage?: number
+}) {
+  let str = `${car.make} ${car.model} (${car.year})`
+  car.chargeVoltage
+  //    ^?
+  if (typeof car.chargeVoltage !== "undefined")
+    str += `// ${car.chargeVoltage}v`
+  //                 ^?
+  console.log(str)
+}
+
+printCar({
+  make: "Tesla",
+  model: "Model 3",
+  year: 2020,
+  chargeVoltage: 220,
+})
+
+// const phones = {
+//   home: { country: "+1", area: "211", number: "652-4515" },
+//   work: { country: "+1", area: "670", number: "752-5856" },
+//   fax: { country: "+1", area: "322", number: "525-4357" }
+// }
+
+const phones: {
+  [k: string]: {
+    country: string
+    area: string
+    number: string
+  } | undefined
+} = {}
+
+phones.fax
