@@ -67,3 +67,9 @@ const phones: {
 } = {}
 
 phones.fax
+
+const numPair: [number, number] = [4, 5]
+numPair.push(6) // [4, 5, 6]
+numPair.pop() // [4, 5]
+numPair.pop() // [4]
+numPair.pop() // []
