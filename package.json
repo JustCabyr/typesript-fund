@@ -1,0 +1,23 @@
+{
+  "name": "typesript-fund",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc --watch --preserveWatchOutput"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustCabyr/typesript-fund.git"
+  },
+  "author": "AbdulKabir Sulaiman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JustCabyr/typesript-fund/issues"
+  },
+  "homepage": "https://github.com/JustCabyr/typesript-fund#readme",
+  "dependencies": {
+    "typescript": "^4.4.3"
+  }
+}
