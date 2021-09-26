@@ -73,3 +73,28 @@ numPair.push(6) // [4, 5, 6]
 numPair.pop() // [4, 5]
 numPair.pop() // [4]
 numPair.pop() // []
+
+function flipCoin(): "heads" | "tails" {
+  if (Math.random() > 0.5) return "heads"
+  return "tails"
+}
+
+// const outcome = flipCoin()
+
+function maybeGetUserInfo():
+  | ["error", Error]
+  | ["success", { name: string; email: string }] {
+  if (flipCoin() === "heads") {
+    return [
+      "success",
+      { name: "Mike North", email: "mike@example.com" },
+    ]
+  } else {
+    return [
+      "error",
+      new Error("The coin landed on TAILS :("),
+    ]
+  }
+}
+
+const outcome = maybeGetUserInfo()
